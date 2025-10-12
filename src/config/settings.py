@@ -25,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-tzy3c1$x#zpvri2sc7s!gfz03zff3c*)sl&1fr^_7!av+@1tj#')
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(int(os.getenv('DJANGO_DEBUG', '1')))
+DEBUG = bool(int(os.getenv('DJANGO_DEBUG', '0')))
 
 ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',') if os.getenv('DJANGO_ALLOWED_HOSTS') else []
 
@@ -90,7 +90,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -126,7 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = BASE_DIR / 'staticroot'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -149,12 +148,12 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = TIME_ZONE
 
 # Email Configuration (MailHog for development)
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp')
-EMAIL_PORT = int(os.getenv('EMAIL_PORT', '1025'))
-EMAIL_USE_TLS = bool(int(os.getenv('EMAIL_USE_TLS', '0')))
-EMAIL_USE_SSL = bool(int(os.getenv('EMAIL_USE_SSL', '0')))
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
-DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'noreply@unatrack.com')
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp')
+#EMAIL_PORT = int(os.getenv('EMAIL_PORT', '1025'))
+#EMAIL_USE_TLS = bool(int(os.getenv('EMAIL_USE_TLS', '0')))
+#EMAIL_USE_SSL = bool(int(os.getenv('EMAIL_USE_SSL', '0')))
+#EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '')
+#EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
+#DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'noreply@unatrack.com')
 

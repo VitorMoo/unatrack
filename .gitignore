@@ -80,3 +80,4 @@ Desktop.ini
 # Celery
 celerybeat-schedule*
 celerybeat.pid
+src/staticroot/
