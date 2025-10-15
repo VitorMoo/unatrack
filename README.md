@@ -309,16 +309,3 @@ docker exec unatrack_celery_beat celery -A config inspect scheduled
 - Assignments
 <img width="1468" height="784" alt="Screenshot 2025-10-07 at 22 20 52" src="https://github.com/user-attachments/assets/a48783a6-80b1-4a05-9db9-8b54b2cf8bef" />
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Author
-
-**Vitor Moreira**
-- GitHub: [@VitorMoo](https://github.com/VitorMoo)
-```
-
----
-
-Developed as an academic project to solve real-world problems in assignment management and deadline tracking.
